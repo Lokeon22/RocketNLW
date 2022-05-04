@@ -16,7 +16,18 @@ header {
   max-width: 1310px;
   padding: 20px;
   margin: 0 auto;
+}
+
+header::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 43rem;
+  top: 0;
+  left: 0;
   background-color: var(--bg-color);
+  position: absolute;
+  z-index: -1;
 }
 
 :root {
@@ -26,9 +37,24 @@ header {
   --color-2: #212529;
 }
 
+/* classes js */
+
+.oi {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 29px;
+}
+
 .ativo {
   display: block !important;
 }
+
+.remove {
+  display: none;
+}
+
+/* classes js */
 
 .content {
   width: 100%;
@@ -88,11 +114,11 @@ header {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin: auto;
-  box-shadow: inset 0px -25px #fffaf1;
 }
 
 .foto img {
   max-width: 100%;
+  object-position: 0 25px;
 }
 
 .text {
@@ -145,6 +171,8 @@ header {
   max-width: 1120px;
   margin: 0 auto;
   background-color: #fffaf1;
+  border-radius: 6px;
+  border: 1px solid #dce9e2;
 }
 
 .numeros {
@@ -165,6 +193,10 @@ header {
   text-align: center;
 }
 
+.cliente1 h3:before {
+  content: "+";
+}
+
 .cliente1 span {
   font-family: var(--font-1);
   font-size: 1rem;
@@ -172,7 +204,7 @@ header {
   color: var(--color-1);
 }
 
-@media screen and (max-width: 948px) {
+@media screen and (max-width: 967px) {
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -197,6 +229,10 @@ header {
   header {
     width: 100%;
     background-color: #00856f;
+  }
+
+  header::before {
+    height: 68rem;
   }
 
   .content {
@@ -280,11 +316,10 @@ header {
   }
 
   .container {
-    width: 90%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     text-align: center;
-    box-shadow: inset 0px -25px #fffaf1;
   }
 
   .text p {
@@ -297,17 +332,27 @@ header {
     margin: 0 auto;
   }
 
+  .foto img {
+    display: block;
+    width: 264px;
+    margin: auto;
+    object-position: 0px 12px;
+  }
+
   .clientes-bg {
-    max-width: 90%;
-    margin: 0 auto;
+    width: 327px;
+    height: 470px;
+    border-radius: 6px;
+    border: 1px solid #dce9e2;
   }
 
   .numeros {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    padding: 10px;
+    justify-content: center;
     text-align: center;
+    padding: 30px;
+    gap: 60px;
   }
 
   .cliente1 {
