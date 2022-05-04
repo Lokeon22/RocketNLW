@@ -7,6 +7,10 @@ const burguer = document.querySelector(".icon img");
 const numeros = document.querySelector(".cliente1 h3");
 const segundoNumero = document.querySelector(".segundo");
 const terceiroNumero = document.querySelector(".terceiro");
+const content = document.querySelector(".container");
+const bg = document.querySelector(".clientes-bg");
+const body = document.querySelector("body");
+const header = document.querySelector("header");
 
 function menuMobile() {
   menu.classList.toggle("ativo");
@@ -14,6 +18,10 @@ function menuMobile() {
   social.classList.toggle("ativo");
   close.classList.toggle("ativo");
   burguer.classList.toggle("remove");
+  content.classList.toggle("desableContent");
+  bg.classList.toggle("desableContent");
+  body.classList.toggle("desableScroll");
+  header.classList.toggle("bg-header");
 }
 
 function cliente() {
@@ -51,4 +59,15 @@ icone.addEventListener("click", () => {
   menuMobile();
 });
 
-(window.onload = cliente()), especialistas(), anos();
+function onScroll() {
+  if (scrollY > 180) {
+    return cliente(), especialistas(), anos();
+  }
+}
+
+function eventNotMobile() {
+  if (window.screen.width >= 500 && window.screen.height >= 768) {
+    (window.onload = cliente()), especialistas(), anos();
+  }
+}
+eventNotMobile();

@@ -39,6 +39,19 @@ header::before {
 
 /* classes js */
 
+.desableContent {
+  display: none !important;
+}
+
+.desableScroll {
+  overflow: hidden;
+}
+
+.bg-header {
+  height: 100vh;
+  background-color: var(--color-1);
+}
+
 .oi {
   display: none;
   position: absolute;
@@ -85,11 +98,23 @@ header::before {
   font-weight: 400;
   line-height: 21px;
   color: var(--color-1);
+  position: relative;
 }
 
-.menu ul li a:hover {
-  font-weight: bold;
-  border-bottom: 2px solid var(--color-1);
+.menu a:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  margin-top: 2px;
+  border-radius: 2px;
+  background-color: var(--color-1);
+  transition: 0.3s;
+  position: absolute;
+}
+
+.menu a:hover::after {
+  width: 100%;
 }
 
 .botao {
@@ -259,7 +284,6 @@ header::before {
   .mobile {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
   }
 
   .icon {
@@ -269,6 +293,7 @@ header::before {
 
   .menu {
     display: none;
+    margin-top: 60px;
   }
 
   .menu1 {
@@ -281,12 +306,13 @@ header::before {
     text-align: center;
     padding: 0;
     align-self: center;
-    gap: 32px;
+    gap: 48px;
   }
 
   .menu ul li a {
     font-size: 1.5rem;
     color: var(--bg-color);
+    font-weight: bold;
   }
 
   .botao {
@@ -298,7 +324,7 @@ header::before {
     background-color: white;
     justify-content: center;
     border: 1px solid var(--color-1);
-    margin: 20px auto;
+    margin: 48px auto;
   }
 
   .botao:hover {
@@ -310,9 +336,9 @@ header::before {
 
   .social-mobile ul {
     display: flex;
-    padding: 20px;
+    padding-top: 80px;
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
   }
 
   .container {
