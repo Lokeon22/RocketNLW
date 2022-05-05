@@ -1,16 +1,19 @@
-const icone = document.querySelector(".icon");
-const menu = document.querySelector(".menu");
-const menu1 = document.querySelector(".menu1");
-const social = document.querySelector(".social-mobile");
-const close = document.querySelector(".oi");
-const burguer = document.querySelector(".icon img");
-const numeros = document.querySelector(".cliente1 h3");
-const segundoNumero = document.querySelector(".segundo");
-const terceiroNumero = document.querySelector(".terceiro");
-const content = document.querySelector(".container");
-const bg = document.querySelector(".clientes-bg");
-const body = document.querySelector("body");
-const header = document.querySelector("header");
+import {
+  icone,
+  menu,
+  menu1,
+  social,
+  close,
+  burguer,
+  numeros,
+  segundoNumero,
+  terceiroNumero,
+  content,
+  bg,
+  body,
+  header,
+  cards,
+} from "./elements.js";
 
 function menuMobile() {
   menu.classList.toggle("ativo");
@@ -23,6 +26,12 @@ function menuMobile() {
   body.classList.toggle("desableScroll");
   header.classList.toggle("bg-header");
 }
+
+window.onscroll = function onScroll() {
+  if (scrollY > 180) {
+    return cliente(), especialistas(), anos();
+  }
+};
 
 function cliente() {
   let numbers = Number(numeros.textContent);
@@ -59,15 +68,28 @@ icone.addEventListener("click", () => {
   menuMobile();
 });
 
-function onScroll() {
-  if (scrollY > 180) {
-    return cliente(), especialistas(), anos();
-  }
-}
-
 function eventNotMobile() {
   if (window.screen.width >= 500 && window.screen.height >= 768) {
     (window.onload = cliente()), especialistas(), anos();
   }
 }
-eventNotMobile();
+
+function cardUp() {
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+      card.classList.add("up");
+      card.classList.remove("notup");
+    });
+  });
+}
+
+function cardNotup() {
+  cards.forEach((card) => {
+    card.addEventListener("mouseout", () => {
+      card.classList.remove("up");
+      card.classList.add("notup");
+    });
+  });
+}
+
+(onload = eventNotMobile()), cardUp(), cardNotup();

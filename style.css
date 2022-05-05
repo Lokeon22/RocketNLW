@@ -67,7 +67,20 @@ header::before {
   display: none;
 }
 
-/* classes js */
+.up {
+  -webkit-box-shadow: 5px 5px 21px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 21px -3px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+.notup {
+  box-shadow: none;
+  transition: 0.4s;
+  transform: scale(1);
+}
+
+/* final js */
 
 .content {
   width: 100%;
@@ -229,6 +242,68 @@ header::before {
   color: var(--color-1);
 }
 
+.services {
+  max-width: 1120px;
+  margin: auto;
+}
+
+.text-services {
+  margin-top: 160px;
+}
+
+.text-services h1 {
+  font-family: var(--font-1);
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: var(--color-1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-services h2 {
+  max-width: 19ch;
+  font-family: var(--font-1);
+  padding: 20px;
+  font-size: 2.5rem;
+  line-height: 52px;
+  text-align: center;
+  margin-bottom: 64px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cards-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 20px;
+  margin-bottom: 160px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--bg-color);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.card h2 {
+  font-family: var(--font-1);
+  font-size: 1.5rem;
+  color: var(--color-2);
+  line-height: 31px;
+  margin: 16px 0;
+}
+
+.card p {
+  font-family: var(--font-1);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
 @media screen and (max-width: 967px) {
   .container {
     display: grid;
@@ -247,6 +322,13 @@ header::before {
   .text h2 {
     max-width: 100%;
     font-size: 2.6rem;
+  }
+
+  .cards-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 10px;
   }
 }
 
@@ -388,17 +470,44 @@ header::before {
   .cliente1 img {
     display: none;
   }
+
+  .text-services {
+    margin: 24px;
+    margin-top: 100px;
+  }
+  .cards-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 24px;
+    padding: 24px;
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .text h2 {
     font-size: 2.125rem;
   }
+
+  .text-services h2 {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text-services h2 {
+    font-size: 2.2rem;
+  }
 }
 
 @media screen and (max-width: 357px) {
   .container {
     width: 100%;
+  }
+
+  .text-services h2 {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
   }
 
   .clientes-bg {
