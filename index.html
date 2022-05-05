@@ -20,9 +20,9 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Serviços</a></li>
+          <li><a href="#home" class="menu-services">Início</a></li>
+          <li><a href="#sobre" class="menu-services">Sobre</a></li>
+          <li><a href="#services" class="menu-services">Serviços</a></li>
           <li><a href="#">Depoimentos</a></li>
         </ul>
       </nav>
@@ -39,7 +39,7 @@
     </div>
   </header>
 
-  <div class="container">
+  <div class="container" id="home">
     <div class="text">
       <h1>boas-vindas a doctorcare 👋</h1>
       <h2>Assistência médica simplificada para todos</h2>
@@ -72,7 +72,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <div class="text-services">
       <h1>serviços</h1>
       <h2>Como podemos ajudá-lo a se sentir melhor?</h2>
@@ -116,7 +116,20 @@
     </div>
   </section>
 
+  <section class="about-bg" id="sobre">
+    <div class="about">
+      <div class="about-image">
+        <img src="./img/happy-doctor-holding-a-clipboard-with-patients.jpg">
+      </div>
+      <div class="about-text">
+        <h1>Sobre nós</h1>
+        <h2>Entenda quem somos e por que existimos</h2>
+        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+      </div>
+    </div>
+  </section>
 
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="./js/script.js" type="module"></script>
 </body>
 

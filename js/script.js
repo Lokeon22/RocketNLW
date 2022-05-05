@@ -13,7 +13,20 @@ import {
   body,
   header,
   cards,
+  serv,
 } from "./elements.js";
+
+serv.forEach((item) => {
+  if (window.screen.width <= 768 && window.screen.height >= 768) {
+    item.addEventListener("click", () => {
+      return menuMobile();
+    });
+  } else if (window.screen.width >= 769 && window.screen.height >= 800) {
+    item.addEventListener("click", () => {
+      return saindo();
+    });
+  }
+});
 
 function menuMobile() {
   menu.classList.toggle("ativo");
@@ -25,6 +38,18 @@ function menuMobile() {
   bg.classList.toggle("desableContent");
   body.classList.toggle("desableScroll");
   header.classList.toggle("bg-header");
+}
+
+function saindo() {
+  menu.classList.remove("ativo");
+  menu1.classList.remove("ativo");
+  social.classList.remove("ativo");
+  close.classList.remove("ativo");
+  burguer.classList.remove("remove");
+  content.classList.remove("desableContent");
+  bg.classList.remove("desableContent");
+  body.classList.remove("desableScroll");
+  header.classList.remove("bg-header");
 }
 
 window.onscroll = function onScroll() {
@@ -77,19 +102,34 @@ function eventNotMobile() {
 function cardUp() {
   cards.forEach((card) => {
     card.addEventListener("mouseover", () => {
-      card.classList.add("up");
-      card.classList.remove("notup");
+      card.classList.add("up"), card.classList.remove("notup");
     });
-  });
-}
-
-function cardNotup() {
-  cards.forEach((card) => {
     card.addEventListener("mouseout", () => {
-      card.classList.remove("up");
-      card.classList.add("notup");
+      card.classList.remove("up"), card.classList.add("notup");
     });
   });
 }
 
-(onload = eventNotMobile()), cardUp(), cardNotup();
+let slidebottom = {
+  distance: "50%",
+  origin: "bottom",
+  duration: 750,
+};
+
+let slidetop = {
+  distance: "50%",
+  origin: "top",
+  duration: 750,
+};
+
+ScrollReveal().reveal(
+  `.cards-services, .about-bg, .about-image, .about-text h2, .about-text p`,
+  slidebottom
+);
+
+ScrollReveal().reveal(
+  `.about-bg, .about-image, .about-text h1, .about-text h2, .about-text p`,
+  slidetop
+);
+
+(onload = eventNotMobile()), cardUp();

@@ -12,6 +12,7 @@ const bg = document.querySelector(".clientes-bg");
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 const cards = document.querySelectorAll(".card");
+const serv = document.querySelectorAll(".menu-services");
 
 export {
   icone,
@@ -28,4 +29,5 @@ export {
   body,
   header,
   cards,
+  serv,
 };
