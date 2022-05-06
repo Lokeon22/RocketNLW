@@ -40,6 +40,7 @@ html {
   --bg-color2: #fffaf1;
   --color-1: #00856f;
   --color-2: #212529;
+  --color-3: #495057;
 }
 
 /* classes js */
@@ -138,6 +139,7 @@ html {
 .botao {
   color: var(--color-1);
   font-family: var(--font-1);
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.875rem;
   background-color: transparent;
@@ -195,6 +197,7 @@ html {
 }
 
 .botao1 {
+  width: 263px;
   padding: 16px 32px;
   display: flex;
   justify-content: center;
@@ -333,6 +336,10 @@ html {
   max-width: 100%;
 }
 
+.about-text {
+  padding: 10px;
+}
+
 .about-text h1 {
   font-family: var(--font-1);
   font-size: 0.875rem;
@@ -357,6 +364,147 @@ html {
   font-weight: 400;
   font-size: 1rem;
   line-height: 150%;
+}
+
+.contact {
+  max-width: 1120px;
+  margin: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  gap: 15px;
+}
+
+.contact-text,
+.contact-bg {
+  margin: 160px 0;
+}
+
+.contact-bg img {
+  max-width: 100%;
+}
+
+.contact-text h2 {
+  max-width: 15ch;
+  font-family: var(--font-1);
+  font-size: 2.5rem;
+  color: var(--color-2);
+  line-height: 52px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-icons {
+  position: relative;
+  left: 33px;
+}
+
+.contact-icons p {
+  font-family: var(--font-1);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--color-3);
+  margin-top: 30px;
+  position: relative;
+}
+
+.endress-icon:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: -30px;
+  top: 0;
+  background-image: url(./img/endress.svg);
+  position: absolute;
+}
+
+.email-icon:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: -30px;
+  top: 0;
+  background-image: url(./img/email.svg);
+  position: absolute;
+}
+
+.contact-text button {
+  margin-top: 40px;
+}
+
+.botao2 {
+  width: 267px;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-1);
+  font-size: 0.875rem;
+  margin-top: 40px;
+  color: white;
+  background: var(--color-1);
+  text-transform: uppercase;
+  gap: 5px;
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+.footer-bg {
+  width: 100%;
+  background-color: var(--color-1);
+}
+
+.footer-grid {
+  display: grid;
+  max-width: 1120px;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  gap: 15px;
+  margin: auto;
+}
+
+.logo-footer img {
+  width: 256px;
+  margin-bottom: 9px;
+}
+
+.footer-text {
+  margin: 80px 0;
+}
+
+.footer-text span {
+  display: block;
+  font-family: var(--font-1);
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--bg-color2);
+  margin-top: 15px;
+}
+
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+  margin: 122px 0;
+  gap: 32px;
+}
+
+.arrow {
+  position: fixed;
+  top: 90%;
+  right: 0.8%;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media screen and (max-width: 967px) {
@@ -394,6 +542,13 @@ html {
   .about-image img {
     height: 100%;
     object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .contact-bg img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
   }
 }
 
@@ -505,6 +660,11 @@ html {
     margin: 0 auto;
   }
 
+  .botao2 {
+    position: relative;
+    left: 20px;
+  }
+
   .foto img {
     display: block;
     width: 264px;
@@ -553,20 +713,32 @@ html {
     transform: scale(1.1);
   }
 
+  .text-services h2 {
+    max-width: 17ch;
+    font-size: 1.875rem;
+    line-height: 42px;
+  }
+
   .about {
     width: 100%;
     display: grid;
-    padding: 20px;
-    gap: 15px;
-    grid-template-columns: 1fr;
     margin: auto;
+    padding: 24px;
+    grid-template-columns: 1fr;
   }
 
   .about-text h1 {
+    font-size: 0.875rem;
     margin-top: 100px;
   }
 
+  .about-text h2 {
+    font-size: 1.875rem;
+    line-height: 42px;
+  }
+
   .about-text p {
+    max-width: 93%;
     margin-bottom: 60px;
   }
 
@@ -579,6 +751,61 @@ html {
 
   .about-text {
     margin: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+    margin: 100px 0;
+  }
+
+  .contact-text,
+  .contact-bg {
+    margin: 0;
+  }
+
+  .contact-icons {
+    position: relative;
+    padding: 0 60px;
+    left: 0;
+  }
+
+  .contact-text h2 {
+    font-size: 1.875rem;
+    line-height: 42px;
+    padding: 0 30px;
+  }
+
+  .contact-bg {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .logo-footer img {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .footer-text {
+    margin-top: 60px;
+    margin-bottom: 0px;
+  }
+
+  .footer-social ul {
+    display: flex;
+    justify-content: start;
+    margin-top: 32px;
+    margin-bottom: 60px;
+    gap: 32px;
   }
 }
 
@@ -596,6 +823,19 @@ html {
   .text-services h2 {
     font-size: 2.2rem;
   }
+
+  .contact-icons {
+    padding: 0 30px;
+  }
+
+  .contact-text h2 {
+    padding: 0;
+  }
+
+  .botao2 {
+    position: relative;
+    left: 0px;
+  }
 }
 
 @media screen and (max-width: 357px) {
@@ -610,5 +850,13 @@ html {
 
   .clientes-bg {
     max-width: 100%;
+  }
+
+  .botao1 {
+    width: 100%;
+  }
+
+  .botao2 {
+    width: 100%;
   }
 }

@@ -16,6 +16,8 @@ import {
   serv,
 } from "./elements.js";
 
+const arrow = document.querySelector(".arrow");
+
 serv.forEach((item) => {
   if (window.screen.width <= 768 && window.screen.height >= 768) {
     item.addEventListener("click", () => {
@@ -52,11 +54,25 @@ function saindo() {
   header.classList.remove("bg-header");
 }
 
-window.onscroll = function onScroll() {
+function menuexec() {
   if (scrollY > 180) {
     return cliente(), especialistas(), anos();
   }
-};
+}
+
+function setasumir() {
+  if (scrollY > 550) {
+    arrow.classList.add("show");
+  } else {
+    arrow.classList.remove("show");
+  }
+}
+
+function backtotop() {
+  arrow.addEventListener("click", () => {
+    window.scroll(0, 0);
+  });
+}
 
 function cliente() {
   let numbers = Number(numeros.textContent);
@@ -128,8 +144,14 @@ ScrollReveal().reveal(
 );
 
 ScrollReveal().reveal(
-  `.about-bg, .about-image, .about-text h1, .about-text h2, .about-text p`,
+  `.about-bg, .about-image, .about-text h1, .about-text h2, .about-text p, .contact-bg, .contact-text h2, .contact-icons p, endress-icon, email-icon, .botao2`,
   slidetop
 );
+
+window.onscroll = () => {
+  menuexec();
+  setasumir();
+  backtotop();
+};
 
 (onload = eventNotMobile()), cardUp();
