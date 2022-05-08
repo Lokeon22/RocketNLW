@@ -1,3 +1,5 @@
+@import url(./dark.css);
+
 * {
   padding: 0;
   margin: 0;
@@ -41,6 +43,7 @@ html {
   --color-1: #00856f;
   --color-2: #212529;
   --color-3: #495057;
+  --color-4: #00453a;
 }
 
 /* classes js */
@@ -148,6 +151,12 @@ html {
   border: 1px solid var(--color-1);
   border-radius: 40px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botao:hover {
+  background-color: var(--color-1);
+  color: var(--bg-color);
 }
 
 .social-mobile {
@@ -204,19 +213,24 @@ html {
   align-items: center;
   font-family: var(--font-1);
   font-size: 0.875rem;
-  color: white;
+  color: var(--bg-color2);
   background: var(--color-1);
   text-transform: uppercase;
   gap: 5px;
   border-radius: 40px;
   border: 0;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botao1:hover {
+  background-color: var(--color-4);
 }
 
 .clientes-bg {
   max-width: 1120px;
   margin: 0 auto;
-  background-color: #fffaf1;
+  background-color: var(--bg-color2);
   border-radius: 6px;
   border: 1px solid #dce9e2;
 }
@@ -445,13 +459,17 @@ html {
   font-family: var(--font-1);
   font-size: 0.875rem;
   margin-top: 40px;
-  color: white;
+  color: var(--bg-color2);
   background: var(--color-1);
   text-transform: uppercase;
   gap: 5px;
   border-radius: 40px;
   border: 0;
   cursor: pointer;
+}
+
+.botao2:hover {
+  background-color: var(--color-4);
 }
 
 .footer-bg {
@@ -493,6 +511,10 @@ html {
   gap: 32px;
 }
 
+.footer-social img:hover {
+  transform: scale(1.1);
+}
+
 .arrow {
   position: fixed;
   top: 90%;
@@ -500,11 +522,14 @@ html {
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+  transition: 0.2s;
+  transform: translateY(100%);
 }
 
 .show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 967px) {
@@ -555,7 +580,7 @@ html {
 @media screen and (max-width: 800px) {
   header {
     width: 100%;
-    background-color: #00856f;
+    background-color: var(--color-1);
   }
 
   header::before {
@@ -676,7 +701,7 @@ html {
     width: 327px;
     height: 470px;
     border-radius: 6px;
-    border: 1px solid #dce9e2;
+    border: 1px solid var(--bg-color);
   }
 
   .numeros {

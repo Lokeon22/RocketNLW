@@ -1,0 +1,13 @@
+:root {
+  --font-1: "DM Sans", sans-serif;
+  --bg-color: #dce9e2;
+  --bg-color2: #fffaf1;
+  --color-1: #00856f;
+  --color-2: #212529;
+  --color-3: #495057;
+  --color-4: #00453a;
+}
+
+.dark {
+  background-color: var(--color-2);
+}
