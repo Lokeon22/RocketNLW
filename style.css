@@ -399,6 +399,7 @@ html {
 
 .contact-bg img {
   max-width: 100%;
+  border-radius: 12px;
 }
 
 .contact-text h2 {
@@ -530,6 +531,16 @@ html {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.hiden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.showdark {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media screen and (max-width: 967px) {
@@ -832,6 +843,29 @@ html {
     margin-bottom: 60px;
     gap: 32px;
   }
+
+  .darkmode-desktop {
+    display: none;
+  }
+
+  .darkmode-mobile {
+    display: block !important;
+    position: absolute;
+    top: 27px;
+    left: 75%;
+  }
+
+  .luamobile {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+
+  .lampadamobile {
+    position: absolute;
+    top: 0;
+    right: 16px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -841,6 +875,18 @@ html {
 
   .text-services h2 {
     margin-bottom: 32px;
+  }
+
+  .luamobile {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+
+  .lampadamobile {
+    position: absolute;
+    top: 0;
+    right: 16px;
   }
 }
 
@@ -883,5 +929,17 @@ html {
 
   .botao2 {
     width: 100%;
+  }
+
+  .luamobile {
+    position: absolute;
+    top: 0;
+    right: 16px;
+  }
+
+  .lampadamobile {
+    position: absolute;
+    top: 0;
+    right: 17px;
   }
 }

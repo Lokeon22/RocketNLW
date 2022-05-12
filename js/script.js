@@ -14,9 +14,38 @@ import {
   header,
   cards,
   serv,
+  arrow,
+  darkmoon,
+  darklight,
+  luamobile,
+  lampadamobile,
 } from "./elements.js";
 
-const arrow = document.querySelector(".arrow");
+function darkmodeDesktopMobile() {
+  darkmoon.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    darkmoon.classList.toggle("hiden");
+    darklight.classList.toggle("showdark");
+  });
+
+  darklight.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    darkmoon.classList.toggle("hiden");
+    darklight.classList.toggle("showdark");
+  });
+
+  luamobile.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    luamobile.classList.toggle("hiden");
+    lampadamobile.classList.toggle("showdark");
+  });
+
+  lampadamobile.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    luamobile.classList.toggle("hiden");
+    lampadamobile.classList.toggle("showdark");
+  });
+}
 
 serv.forEach((item) => {
   if (window.screen.width <= 768 && window.screen.height >= 768) {
@@ -154,4 +183,4 @@ window.onscroll = () => {
   backtotop();
 };
 
-(onload = eventNotMobile()), cardUp();
+(onload = eventNotMobile()), cardUp(), darkmodeDesktopMobile();

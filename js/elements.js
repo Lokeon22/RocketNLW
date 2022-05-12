@@ -13,6 +13,11 @@ const body = document.querySelector("body");
 const header = document.querySelector("header");
 const cards = document.querySelectorAll(".card");
 const serv = document.querySelectorAll(".menu-services");
+const arrow = document.querySelector(".arrow");
+let darkmoon = document.querySelector(".dark-moon");
+let darklight = document.querySelector(".dark-light");
+let luamobile = document.querySelector(".luamobile");
+let lampadamobile = document.querySelector(".lampadamobile");
 
 export {
   icone,
@@ -30,4 +35,9 @@ export {
   header,
   cards,
   serv,
+  arrow,
+  darkmoon,
+  darklight,
+  luamobile,
+  lampadamobile,
 };
