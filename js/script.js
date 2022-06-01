@@ -1,17 +1,9 @@
 import {
   icone,
-  menu,
-  menu1,
-  social,
-  close,
-  burguer,
   numeros,
   segundoNumero,
   terceiroNumero,
-  content,
-  bg,
   body,
-  header,
   cards,
   serv,
   arrow,
@@ -50,38 +42,34 @@ function darkmodeDesktopMobile() {
 serv.forEach((item) => {
   if (window.screen.width <= 768 && window.screen.height >= 768) {
     item.addEventListener("click", () => {
-      return menuMobile();
-    });
-  } else if (window.screen.width >= 769 && window.screen.height >= 800) {
-    item.addEventListener("click", () => {
-      return saindo();
+      return MenuMobile();
     });
   }
 });
 
-function menuMobile() {
-  menu.classList.toggle("ativo");
-  menu1.classList.toggle("ativo");
-  social.classList.toggle("ativo");
-  close.classList.toggle("ativo");
-  burguer.classList.toggle("remove");
-  content.classList.toggle("desableContent");
-  bg.classList.toggle("desableContent");
-  body.classList.toggle("desableScroll");
-  header.classList.toggle("bg-header");
+function MenuMobile(tag) {
+  const elements = document.querySelectorAll(tag);
+  this.ativar = (element) => {
+    elements.forEach((i) => {
+      i.classList.toggle(element);
+    });
+  };
+  this.remove = (element) => {
+    elements.forEach((i) => {
+      i.classList.remove(element);
+    });
+  };
 }
 
-function saindo() {
-  menu.classList.remove("ativo");
-  menu1.classList.remove("ativo");
-  social.classList.remove("ativo");
-  close.classList.remove("ativo");
-  burguer.classList.remove("remove");
-  content.classList.remove("desableContent");
-  bg.classList.remove("desableContent");
-  body.classList.remove("desableScroll");
-  header.classList.remove("bg-header");
-}
+let menu = new MenuMobile(".menu");
+let menu1 = new MenuMobile(".menu1");
+let social = new MenuMobile(".social-mobile");
+let close = new MenuMobile(".oi");
+let burguer = new MenuMobile(".icon img");
+let content = new MenuMobile(".container");
+let bg = new MenuMobile(".clientes-bg");
+let bodyFunction = new MenuMobile("body");
+let headerFunction = new MenuMobile("header");
 
 function menuexec() {
   if (scrollY > 180) {
@@ -135,7 +123,15 @@ function anos() {
 }
 
 icone.addEventListener("click", () => {
-  menuMobile();
+  menu.ativar("ativo");
+  menu1.ativar("ativo");
+  social.ativar("ativo");
+  close.ativar("ativo");
+  burguer.ativar("remove");
+  content.ativar("desableContent");
+  bg.ativar("desableContent");
+  bodyFunction.ativar("desableScroll");
+  headerFunction.ativar("bg-header");
 });
 
 function eventNotMobile() {
